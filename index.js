@@ -1,6 +1,7 @@
-/*global global define module clearInterval setTimeout*/
+/*global global*/
 ;(function(root){
-
+    "use strict";
+    
     try {root = window;} catch(e){ try {root = global;} catch(f){} }
     
     function Timelapser(time){
@@ -18,7 +19,7 @@
 	    if(!this.paused){
 		time = time || this.time;
 		this._start = Date.now();
-		this._timer = setTimeout(this._tock.bind(this),time);
+		this._timer = root.setTimeout(this._tock.bind(this),time);
 	    }
 	},
 	_tock: function(){
@@ -60,7 +61,7 @@
 	stop: function(){
 	    if(!this.paused){
 		this._stop = Date.now();
-		clearInterval(this._timer);
+		root.clearInterval(this._timer);
 		this.paused = true;
 	    }
 	},
@@ -71,8 +72,8 @@
 	}
     };
 
-    if(module && module.exports) module.exports = Timelapser;
-    else if(typeof define ==='function' && define.amd) define(Timelapser);
+    if(root.module && root.module.exports) root.module.exports = Timelapser;
+    else if(typeof root.define ==='function' && root.define.amd) root.define(Timelapser);
     else root.Timelapser = Timelapser;
 
 }(this));
