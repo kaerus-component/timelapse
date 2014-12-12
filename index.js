@@ -3,7 +3,7 @@
 
     try {root = window;} catch(e){ try {root = global;} catch(f){} }
     
-    function Timelapse(time){
+    function Timelapser(time){
 	this.callback = null;
 	this.time = time;
 	this.paused = undefined;
@@ -13,7 +13,7 @@
 	this._stop = 0;
     }
 
-    Timelapse.prototype = {
+    Timelapser.prototype = {
 	_tick: function(time){
 	    if(!this.paused){
 		time = time || this.time;
@@ -71,8 +71,8 @@
 	}
     };
 
-    if(module && module.exports) module.exports = Timelapse;
-    else if(typeof define ==='function' && define.amd) define(Timelapse);
-    else root.Timelapse = Timelapse;
+    if(module && module.exports) module.exports = Timelapser;
+    else if(typeof define ==='function' && define.amd) define(Timelapser);
+    else root.Timelapser = Timelapser;
 
 }(this));
