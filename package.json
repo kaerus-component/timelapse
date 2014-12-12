@@ -1,5 +1,5 @@
 {
-  "name": "timelapse",
+  "name": "timelapser",
   "version": "0.1.0",
   "description": "interval timer",
   "implements": [
