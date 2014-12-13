@@ -73,4 +73,4 @@
 
     exports.Timelapser = Timelapser;
 
-}('undefined' !== exports && exports || 'undefined' !== typeof window && window || global || this));
+}('undefined' !== typeof exports && exports || 'undefined' !== typeof window && window || global || this));
